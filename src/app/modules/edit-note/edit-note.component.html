@@ -1,0 +1,40 @@
+<form [formGroup]="form" (ngSubmit)="onUpdate()">
+  <mat-card appearance="outlined">
+    <mat-form-field>
+      <mat-label>Title:</mat-label>
+      <input
+        type="text"
+        name="title"
+        matInput
+        formControlName="title"
+        required
+        minlength="3"
+        maxlength="35"
+      />
+      <!-- <mat-error *ngIf="title.invalid">Enter a valid title.</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description:</mat-label>
+      <input
+        type="text"
+        name="description"
+        maxlength="40"
+        matInput
+        formControlName="description"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Note:</mat-label>
+      <textarea
+        matInput
+        rows="6"
+        name="body"
+        required
+        formControlName="body"
+        maxlength="500"
+      ></textarea>
+      <!-- <mat-error *ngIf="body.invalid">Note is empty!.</mat-error> -->
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Update Note</button>
+  </mat-card>
+</form>
